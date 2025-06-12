@@ -1,0 +1,14 @@
+C:\Users\MONSTER\NotHesaplayici\bin\Debug\net8.0\NotHesaplayici.exe
+C:\Users\MONSTER\NotHesaplayici\bin\Debug\net8.0\NotHesaplayici.deps.json
+C:\Users\MONSTER\NotHesaplayici\bin\Debug\net8.0\NotHesaplayici.runtimeconfig.json
+C:\Users\MONSTER\NotHesaplayici\bin\Debug\net8.0\NotHesaplayici.dll
+C:\Users\MONSTER\NotHesaplayici\bin\Debug\net8.0\NotHesaplayici.pdb
+C:\Users\MONSTER\NotHesaplayici\obj\Debug\net8.0\NotHesaplayici.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\MONSTER\NotHesaplayici\obj\Debug\net8.0\NotHesaplayici.AssemblyInfoInputs.cache
+C:\Users\MONSTER\NotHesaplayici\obj\Debug\net8.0\NotHesaplayici.AssemblyInfo.cs
+C:\Users\MONSTER\NotHesaplayici\obj\Debug\net8.0\NotHesaplayici.csproj.CoreCompileInputs.cache
+C:\Users\MONSTER\NotHesaplayici\obj\Debug\net8.0\NotHesaplayici.dll
+C:\Users\MONSTER\NotHesaplayici\obj\Debug\net8.0\refint\NotHesaplayici.dll
+C:\Users\MONSTER\NotHesaplayici\obj\Debug\net8.0\NotHesaplayici.pdb
+C:\Users\MONSTER\NotHesaplayici\obj\Debug\net8.0\NotHesaplayici.genruntimeconfig.cache
+C:\Users\MONSTER\NotHesaplayici\obj\Debug\net8.0\ref\NotHesaplayici.dll
