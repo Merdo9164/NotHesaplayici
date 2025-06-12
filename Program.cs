@@ -1,44 +1,62 @@
 ﻿// Not Ortalaması Hesaplama ve Değerlendirme Uygulaması
 using System;
+using System.Collections.Generic;
 
 class Program
 {
-    static void Main(string[] args)
+    class Ogrenci
     {
-        Console.Write("Öğrenci adını girin: ");
-        string ad = Console.ReadLine();
+        public string Ad { get; set; }
+        public int Not1 { get; set; }
+        public int Not2 { get; set; }
+        public int Not3 { get; set; }
 
-        // Notları al
-        int not1 = NotAl("1. notu girin: ");
-        int not2 = NotAl("2. notu girin: ");
-        int not3 = NotAl("3. notu girin: ");
-
-        // Ortalama hesapla
-        double ortalama = (not1 + not2 + not3) / 3.0;
-
-        // Sonucu yazdır
-        Console.WriteLine($"\n{ad} adlı öğrencinin ortalaması: {ortalama}");
-
-        if (ortalama < 50)
-        {
-            Console.WriteLine("Durum: Kaldı");
-        }
-        else if (ortalama < 70)
-        {
-            Console.WriteLine("Durum: Geçti");
-        }
-        else
-        {
-            Console.WriteLine("Durum: Başarılı");
-
-            if (ortalama >= 90)
-            {
-                Console.WriteLine("Tebrikler, onur belgesi kazandınız!");
-            }
-        }
+        public double Ortalama => (Not1 + Not2 + Not3) / 3.0;
     }
 
-    // Not alma fonksiyonu (0–100 kontrolü içerir)
+    static void Main(string[] args)
+    {
+        Console.Write("Kaç öğrenci gireceksiniz? ");
+        int ogrenciSayisi = Convert.ToInt32(Console.ReadLine());
+
+        List<Ogrenci> ogrenciler = new List<Ogrenci>();
+
+        for (int i = 0; i < ogrenciSayisi; i++)
+        {
+            Console.WriteLine($"\n{i + 1}. öğrenci bilgileri:");
+            Ogrenci o = new Ogrenci();
+
+            Console.Write("Ad: ");
+            o.Ad = Console.ReadLine();
+
+            o.Not1 = NotAl("1. not: ");
+            o.Not2 = NotAl("2. not: ");
+            o.Not3 = NotAl("3. not: ");
+
+            ogrenciler.Add(o);
+        }
+
+        Console.WriteLine("\n--- Öğrenci Ortalamaları ---");
+        double toplamOrtalama = 0;
+        Ogrenci enBasarili = null;
+
+        foreach (var ogr in ogrenciler)
+        {
+            Console.WriteLine($"{ogr.Ad} - Ortalama: {ogr.Ortalama:F2}");
+
+            toplamOrtalama += ogr.Ortalama;
+
+            if (enBasarili == null || ogr.Ortalama > enBasarili.Ortalama)
+            {
+                enBasarili = ogr;
+            }
+        }
+
+        double sinifOrt = toplamOrtalama / ogrenciler.Count;
+        Console.WriteLine($"\nSınıf Ortalaması: {sinifOrt:F2}");
+        Console.WriteLine($"En Başarılı Öğrenci: {enBasarili.Ad} ({enBasarili.Ortalama:F2})");
+    }
+
     static int NotAl(string mesaj)
     {
         int not;
@@ -49,15 +67,14 @@ class Program
 
             if (int.TryParse(girdi, out not) && not >= 0 && not <= 100)
             {
-                break;
+                return not;
             }
             else
             {
-                Console.WriteLine("Geçerli bir not girin (0–100 arası).");
+                Console.WriteLine("Lütfen 0 ile 100 arasında bir not girin.");
             }
         }
-
-        return not;
     }
 }
+
 
